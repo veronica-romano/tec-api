@@ -1,0 +1,23 @@
+{
+  "type": "module",
+  "name": "tec-api",
+  "version": "1.0.0",
+  "description": "API usando node e express",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/veronica-silva/tec-api.git"
+  },
+  "author": "veronica-silva",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/veronica-silva/tec-api/issues"
+  },
+  "homepage": "https://github.com/veronica-silva/tec-api#readme",
+  "dependencies": {
+    "express": "^4.18.1"
+  }
+}
