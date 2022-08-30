@@ -1,7 +1,12 @@
 import express from 'express';
+import {ler, lerUm, inserir} from "./src/aluno.js"
+
 const app = express();
 const porta = 3000;
 
+
+app.use(express.json());
+app.use(express.urlencoded({extended:true}));
 
 /* Rotas */
 /* rota (endpoint) para a raiz da API */
@@ -12,20 +17,24 @@ app.get('/', (req, res)=>{
 
 /* rota para exibir todos os alunos */
 app.get('/alunos', (req, res)=>{
-    res.send(`Exibir todos os alunos.`);
+   // res.send(`Exibir todos os alunos.`);
    /*  res.render(`alunos`); */
+   ler(res);
 });
 
 /* rota para exibir um unido aluno */
 app.get('/alunos/:id', (req, res)=>{
-    res.send(`Exibir dados de UM aluno.`);
-    res.render(`alunos/:id`);
+    const idAluno = req.params.id;
+    lerUm(idAluno, res);
+    //res.send(`Exibir dados de UM aluno.`);
+    //res.render(`alunos/:id`);
 });
 
 /* rota  */
 app.post('/alunos', (req, res)=>{
-    
-    res.send(`Inserir alunos.`);
+    const novoAluno = req.body;
+    inserir(novoAluno, res);
+    //res.send(`Inserir alunos.`);
 });
 
 /* rota para atualizar todos os alunos */

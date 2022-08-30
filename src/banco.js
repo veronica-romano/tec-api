@@ -14,4 +14,6 @@ conexao.connect( erro =>{
     } else {
         console.log(`Banco de dados conectado com sucesso!`)
     }
-})
+});
+
+export default conexao
