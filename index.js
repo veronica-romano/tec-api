@@ -6,7 +6,7 @@ const porta = 3000;
 /* Rotas */
 /* rota (endpoint) para a raiz da API */
 app.get('/', (req, res)=>{
-    res.send(`É um dia lindo para aprender sobre APIs.`);
+    res.send(`Essa é a página inicial da aplicação, ou raiz da API. É um dia lindo para aprender sobre APIs.`);
  /*    res.render(`index`); */
 });
 
