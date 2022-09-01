@@ -2,7 +2,8 @@ import express from 'express';
 import {ler, lerUm, inserir, atualizar, excluir} from "./src/aluno.js"
 
 const app = express();
-const porta = 3000;
+const porta = process.env.PORT || 3000; //REMOTO OU LOCAL
+//local// const porta = 3000;
 
 
 app.use(express.json());
