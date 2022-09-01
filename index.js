@@ -54,7 +54,7 @@ app.patch('/alunos/:id', (req, res)=>{
 /* rota para excluir alunos */
 app.delete('/alunos/:id', (req, res)=>{
     
-    res.send(`excluir aluno`);
+    //res.send(`excluir aluno`);
 });
 
 /* configurando o servidor */
