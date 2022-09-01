@@ -42,4 +42,18 @@ function inserir (aluno, res){
     })
 }
 
-export {ler, lerUm, inserir};
+function atualizar(id, aluno, res){
+     const sql = "UPDATE alunos SET ? WHERE id = ?";
+     /* a ordem importa por conta do sql, primeiro pega dados do aluno dps o id */
+     conexao.query(sql,[aluno, id],(erro,resultados)=>{
+         if(erro){
+             res.status(400).json(erro.code);
+         }else{/* 
+             res.status(200).json({"status":"atualizado com sucesso!"}); */
+             /* spread operator(operador de 'espalhamento' de objeto) */
+             res.status(200).json({...aluno,id});
+ 
+         }
+     });
+}
+export {ler, lerUm, inserir, atualizar};

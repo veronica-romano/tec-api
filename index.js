@@ -1,5 +1,5 @@
 import express from 'express';
-import {ler, lerUm, inserir} from "./src/aluno.js"
+import {ler, lerUm, inserir, atualizar} from "./src/aluno.js"
 
 const app = express();
 const porta = 3000;
@@ -45,8 +45,10 @@ app.put('/alunos/:id', (req, res)=>{
 
 /* rota para atualizar alguns/todos alunos */
 app.patch('/alunos/:id', (req, res)=>{
-    
-    res.send(`atualizar alguns/todos alunos`);
+    const id = parseInt(req.params.id);
+    const aluno = req.body;
+    atualizar(id, aluno, res);
+    //res.send(`atualizar alguns/todos alunos`);
 });
 
 /* rota para excluir alunos */
