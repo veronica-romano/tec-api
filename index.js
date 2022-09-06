@@ -1,5 +1,6 @@
 import express from 'express';
-import {ler, lerUm, inserir, atualizar, excluir} from "./src/aluno.js"
+import cors from 'cors';
+import {ler, lerUm, inserir, atualizar, excluir} from "./src/aluno.js";
 
 const app = express();
 const porta = process.env.PORT || 3000; //REMOTO OU LOCAL
@@ -8,6 +9,8 @@ const porta = process.env.PORT || 3000; //REMOTO OU LOCAL
 
 app.use(express.json());
 app.use(express.urlencoded({extended:true}));
+
+app.use(cors());
 
 /* Rotas */
 /* rota (endpoint) para a raiz da API */
