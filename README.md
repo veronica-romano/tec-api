@@ -1,3 +1,3 @@
 # tec-api
  Construindo uma api com node.
-Projeto realizado no Senac
+Projeto realizado no Senac Penha.
